@@ -32,7 +32,7 @@ func LoginCheck(c *gin.Context) {
 	// 判断是否成功
 	if L.Password == check[0].Password {
 		//c.JSON(http.StatusOK, gin.H{"用户登录成功！邮箱": check[0].Email})
-		c.Redirect(http.StatusMovedPermanently, "http://localhost:8080/management/navigation")
+		c.Redirect(http.StatusMovedPermanently, "http://18.191.157.203:8080/management/navigation")
 		c.SetCookie("key_cookie", check[0].Email+check[0].Position, 30, "/", "localhost", false, true)
 	} else {
 		c.JSON(http.StatusOK, gin.H{"用户验证失败！邮箱：": check[0].Email})

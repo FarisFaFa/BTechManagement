@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加新工作</title>
+</head>
+<body>
+
+<form action="http://18.191.157.203:8080/management/task_management/add" method="post" enctype="multipart/form-data">
+    任务编号：<input type="text" name="TaskId">
+    <br>
+    任务地点：<input type="text" name="Location">
+    <br>
+    截止日期：<input type="text" name="Deadline">
+    <br>
+    负责员工：<input type="text" name="InchargeId">
+    <br>
+    联系人：<input type="text" name="ContactName">
+    <br>
+    联系电话：<input type="text" name="ContactPhone">
+    <br>
+    联系邮箱：<input type="text" name="ContactEmail">
+    <br>
+    <!--
+    是否完成：<input type="text" name="Completed">
+    <br>
+    -->
+    <input type="submit" value="提交">
+</form>
+
+</body>
+</html>

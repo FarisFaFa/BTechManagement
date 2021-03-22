@@ -31,6 +31,14 @@ func main() {
 		// 返回HTML文件，响应状态码200，html文件名为index.html，模板参数为nil
 		context.HTML(http.StatusOK, "login.html", nil)
 	})
+	r.Handle("GET", "/management/task_management/new", func(context *gin.Context) {
+		// 返回HTML文件，响应状态码200，html文件名为index.html，模板参数为nil
+		context.HTML(http.StatusOK, "newTask.html", nil)
+	})
+	r.Handle("GET", "/management/employee_management/new", func(context *gin.Context) {
+		// 返回HTML文件，响应状态码200，html文件名为index.html，模板参数为nil
+		context.HTML(http.StatusOK, "newEmployee.html", nil)
+	})
 
 	//登陆
 	r.POST("/management/loginCheck", mysqlfile.LoginCheck)
@@ -44,12 +52,12 @@ func main() {
 		// 任务管理页面
 		r.GET("/management/task_management", mysqlfile.XormGetAllTasks)
 		// 插入新任务
-		r.POST("/management/task_management/modify", mysqlfile.InsertTask)
+		r.POST("/management/task_management/add", mysqlfile.InsertTask)
 
 		// 用户管理界面
 		r.GET("/management/employee_management", mysqlfile.XormGetAllEmployee)
 		// 插入新用户
-		r.POST("/management/employee_management/new", mysqlfile.XormInsertEmployee)
+		r.POST("/management/employee_management/add", mysqlfile.XormInsertEmployee)
 
 	}
 	// 监听端口
